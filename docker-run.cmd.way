@@ -1,0 +1,14 @@
+docker run -dit \
+    --privileged --network=host --ipc=host \
+    --ulimit rtprio=99 --ulimit memlock=-1 \
+    --cgroupns=host -v /sys/fs/cgroup:/sys/fs/cgroup:rw \
+    --env XDG_RUNTIME_DIR=/tmp \
+    --env WAYLAND_DISPLAY=$WAYLAND_DISPLAY \
+    --volume $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY:rw \
+    --volume /lib/modules:/lib/modules:ro \
+    --volume "$(pwd)":/ros2 \
+    --name rosl rosl:latest
+
+#    --user=$(id -u):$(id -g) \
+#    --volume ~/course/realtime/ros2docker:/ros2 \
+#

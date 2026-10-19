@@ -1,0 +1,11 @@
+docker run -dit \
+    --privileged --network=host --ipc=host \
+    --ulimit rtprio=99 --ulimit memlock=-1 \
+    --cgroupns=host -v /sys/fs/cgroup:/sys/fs/cgroup:rw \
+    --env DISPLAY=$DISPLAY \
+    --env XAUTHORITY=/tmp/.Xauthority \
+    --volume ~/.Xauthority:/tmp/.Xauthority:rw \
+    --volume /tmp/.X11-unix:/tmp/.X11-unix:rw \
+    --volume /lib/modules:/lib/modules:ro \
+    --volume "$(pwd)":/ros2 \
+    --name  u2  ubuntu:24.04
