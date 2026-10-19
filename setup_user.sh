@@ -58,4 +58,3 @@ else
 fi
 
 echo "User configuration completed successfully!"
-

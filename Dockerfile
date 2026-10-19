@@ -48,7 +48,7 @@ RUN source /opt/ros/$ROS_DISTRO/setup.bash && source install/local_setup.bash &&
     rosdep install --from-paths src --ignore-src -y --skip-keys \
       "microxrcedds_agent rmw_microxrcedds micro_ros_agent" && \
     source /opt/ros/$ROS_DISTRO/setup.bash && \
-    colcon build 
+    colcon build
 
 RUN source /opt/ros/$ROS_DISTRO/setup.bash && source install/local_setup.bash && \
     ros2 run micro_ros_setup create_firmware_ws.sh host && \
