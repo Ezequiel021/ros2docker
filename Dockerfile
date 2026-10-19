@@ -57,8 +57,8 @@ RUN source /opt/ros/$ROS_DISTRO/setup.bash && source install/local_setup.bash &&
 RUN apt-get install -y lttng-tools ros-lyrical-ros2trace
 RUN apt-get install -y kmod
 
-RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /uros_ws/bashrc && \
-    echo "source /uros_ws/install/local_setup.bash" >> /uros_ws/bashrc
+RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /uros_ws/.bashrc && \
+    echo "source /uros_ws/install/local_setup.bash" >> /uros_ws/.bashrc
 
 RUN rm -rf /var/lib/apt/lists/*
 
